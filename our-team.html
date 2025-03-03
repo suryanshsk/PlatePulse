@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - PlatePulse</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" ><div class="logo-container" style="display: flex; align-items: center; height: 60px;">
+            <img src="Plate-Pulse.png" alt="PlatePulse" width="100" height="85" style="height: auto;">
+            <span class="logo-text logo-name" style="margin-left: 10px;">PlatePulse</span>
+        </div></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="index.html#login-choice" id="auth-link" onclick="showPage('login-choice')">Login</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Our Team Page -->
+    <div id="our-team" class="page active">
+        <h2>Meet Our Team</h2>
+        <p class="team-intro">At PlatePulse, our team is passionate about reducing food waste and feeding the future. We’re a small but dedicated duo, blending tech and compassion to connect surplus food with those in need. Get to know the minds behind our mission!</p>
+        
+        <!-- Team Members -->
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member-card">
+                <div class="team-member-image">
+                    <br>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLi1eQRsPr1w/profile-displayphoto-shrink_200_200/B4DZQ4ke.WHYAY-/0/1736115876220?e=1746057600&v=beta&t=m-hkPPZaNx-nGBbHq5i3HHUdqDLjit6wD0_3KZy4wpw" alt="Team Member 1">
+                </div>
+                <div class="team-member-info">
+                    <h3>Avanish Singh</h3>
+                    <p><strong>College:</strong> Noida Institute of Engineering And Technology</p>
+                    <p><strong>Degree:</strong> B.Tech</p>
+                    <p><strong>Stream:</strong> Computer Science and Engineering</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/avanishsinghengineer" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/suryanshsk" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member-card">
+                <div class="team-member-image">
+                    <br>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQExeeh2wh-J-Q/profile-displayphoto-shrink_800_800/B4DZVPoRBpHYAc-/0/1740797713873?e=1746662400&v=beta&t=8YcRtMVK1vi-w3wGY2EjlCvlaWmbPBZGupO5JJnF5sk" alt="Team Member 2">
+                </div>
+                <div class="team-member-info">
+                    <h3>Aditya Singh Chauhan</h3>
+                    <p><strong>College:</strong> Noida Institute of Engineering And Technology</p>
+                    <p><strong>Degree:</strong> B.Tech</p>
+                    <p><strong>Stream:</strong>Computer Science and Engineering</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/priyakapoor" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/priyakapoor" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Axios for HTTP requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Ensure the "Our Team" page is active
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            document.getElementById('our-team').style.display = 'block';
+            document.getElementById('our-team').classList.add('active');
+        });
+
+        // Hamburger menu toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

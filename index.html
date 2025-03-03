@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlatePulse - Rescue Surplus Food</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" onclick="showPage('home')"><div class="logo-container" style="display: flex; align-items: center; height: 60px;">
+            <img src="Plate-Pulse.png" alt="PlatePulse" width="100" height="85" style="height: auto;">
+            <span class="logo-text logo-name" style="margin-left: 10px;">PlatePulse</span>
+        </div></a>
+        
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="#" id="auth-link" onclick="showPage('login-choice')">Login</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Home Page (Landing) -->
+    <div id="home" class="page">
+        <!-- Hero Section with Background Image -->
+        <div class="hero">
+            <div class="hero-overlay">
+                <h1>Rescue Surplus Food, Feed the Future</h1>
+                <p>Welcome to PlatePulse—a platform connecting companies with surplus food to NGOs in real-time, reducing waste while making a difference. We’re also a growing company offering advertisement opportunities to support our mission.</p>
+                <button onclick="showPage('login-choice')">Get Started</button>
+            </div>
+        </div>
+
+        <!-- Impact Tracker Section -->
+<div class="impact-tracker">
+    <h2>Our Impact So Far</h2>
+    <div class="impact-stats">
+        <div class="impact-card">
+            <i class="fas fa-utensils impact-icon"></i>
+            <h3 id="meals-donated">0</h3>
+            <p>Meals Donated</p>
+        </div>
+        <div class="impact-card">
+            <i class="fas fa-leaf impact-icon"></i>
+            <h3 id="food-waste-prevented">0</h3>
+            <p>Food Waste Prevented (kg)</p>
+        </div>
+        <div class="impact-card">
+            <i class="fas fa-users impact-icon"></i>
+            <h3 id="ngos-supported">0</h3>
+            <p>NGOs Supported</p>
+        </div>
+    </div>
+</div>
+
+<!-- Success Stories Section -->
+<div class="success-stories">
+    <h2>Success Stories</h2>
+    <div class="stories-grid">
+        <div class="story-card">
+            <i class="fas fa-heart story-icon"></i>
+            <h3>Company X Feeds 50 Families</h3>
+            <p>Company X listed 100 sandwiches on PlatePulse, and within 2 hours, NGO Hope claimed them, feeding 50 families in Chennai. "PlatePulse made it so easy to connect!" - NGO Hope</p>
+        </div>
+        <div class="story-card">
+            <i class="fas fa-heart story-icon"></i>
+            <h3>Event Surplus Saves the Day</h3>
+            <p>After a corporate event, EventCo had 200 pizzas left. PlatePulse connected them with NGO Care, who distributed the food to a local orphanage, feeding 150 children.</p>
+        </div>
+    </div>
+</div>
+
+        <!-- What is Us Section with Image -->
+        <div class="what-is-us">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>What is PlatePulse?</h2>
+                    <p>We are a social impact startup dedicated to fighting food waste. PlatePulse connects companies with surplus food to NGOs, ensuring no meal goes to waste. Beyond our core mission, we partner with businesses to advertise their brands, helping us sustain and grow our impact.</p>
+                </div>
+                <div class="section-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG46RrIAGHKB69tfTe5hqBObAfYqBZw5Mn91lL2byFVmyn7RwcpqGUi576L4nJkfbq-ex-mVal0yOrQh8YF4Liyzw9mF-kF286oytyzVtlq71j24gbieNXE7aOrRqt2BmwCZWPRxYD-Ty7IvbkpuPoVDBNRxgVGXGy8MDaUDUFf2vCS7FhWU7ThvhujJKB/s320/1.jpeg" alt="Companies and NGOs collaborating over food">
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Vision Section with Image -->
+        <div class="our-vision">
+            <div class="section-content">
+                <div class="section-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqUTQPOuPtfF1aHXhZBQqVLVn4N460-V0ntKQjID8GIFpjcb8-JnhER77eOCx2Y3E2kgZHocSCIXPoyEx8ufNMZm4dUvzxHoF-CM0UxYCbYhWpA8CT5AFaiYXXthWTqphImRUNK5JHPXp3tYoM3IRj6HuEnhVigrYHv6E1utig3v2e7PLtVLJRWhFcY5h8/s320/2.jpg" alt="A sustainable food future">
+                </div>
+                <div class="section-text">
+                    <h2>Our Vision</h2>
+                    <p>At PlatePulse, we envision a world where no food goes to waste. By linking surplus food to those in need, we aim to cut India’s 40% food waste, feed millions, and create a sustainable future—one meal at a time.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advertisement Section with Icon -->
+        <div class="advertisement">
+            <i class="fas fa-bullhorn ad-icon"></i>
+            <h2>Advertise with Us</h2>
+            <p>Looking to promote your company while supporting a great cause? PlatePulse offers advertisement opportunities for businesses. Reach a socially conscious audience while helping us reduce food waste. Contact us to learn more about our ad packages!</p>
+            <button onclick="showPage('contact')">Contact Us for Advertising</button>
+        </div>
+
+        <!-- Features Section with Icons -->
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-clock feature-icon"></i>
+                <h3>Real-Time Rescue</h3>
+                <p>Add or claim food instantly with live locations.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-leaf feature-icon"></i>
+                <h3>Zero Waste</h3>
+                <p>Reduce food waste with smart matching.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-map feature-icon"></i>
+                <h3>Free & Open</h3>
+                <p>Powered by OpenStreetMap—no costs, just impact.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <h2>About PlatePulse</h2>
+        <p>Our mission is to cut India’s 40% food waste by connecting surplus food to those in need. Born at SRM BUILDS 6.0, we’re a startup with a vision for a zero-waste future.</p>
+        <br><h3>How We Sustain Our Mission</h3>
+<p>PlatePulse operates <strong>exclusively through advertising revenue</strong>, ensuring that food rescue remains free for donors and NGOs.</p>
+
+<br><h3>Our Revenue Model</h3>
+<ul>
+    <li><strong>Sponsored Listings & Ads</strong> – Businesses can pay to feature their brand on our platform, gaining visibility among NGOs, donors, and conscious consumers.</li>
+    <li><strong>Homepage & In-App Banner Ads</strong> – Companies can advertise sustainable products and services on PlatePulse.</li>
+    <li><strong>Brand Partnerships & CSR Sponsorships</strong> – We collaborate with companies looking to enhance their Corporate Social Responsibility (CSR) impact through food rescue initiatives.</li>
+    <li><strong>Sponsored Content & Promotions</strong> – Businesses can publish sponsored blogs, videos, and social media promotions to reach an audience that cares about sustainability.</li>
+</ul>
+
+<br><h3>Why Our Model Works</h3>
+<ul>
+    <li><strong>100% free for NGOs & donors</strong> – Ensuring surplus food reaches those in need without cost barriers.</li>
+    <li><strong>Ethical advertising</strong> – We partner only with brands that align with our values.</li>
+    <li><strong>Sustainable growth</strong> – Every ad revenue helps us expand, improve technology, and increase food rescue efforts.</li>
+</ul>
+
+<br><p>🔗 <strong>Want to advertise with us?</strong> Contact us today to reach a socially responsible audience while making a difference! 🚀</p>
+        <div class="team">
+            <div class="team-member">Team: CodeSpectra</div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <h2>Contact Us</h2>
+        <p>For advertising inquiries or general questions, reach out to us below:</p>
+        <form id="contact-form" onsubmit="event.preventDefault(); submitContactForm();">
+            <input type="text" id="contact-name" placeholder="Name" required>
+            <input type="email" id="contact-email" placeholder="Email" required>
+            <textarea id="contact-message" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Login Choice Page -->
+    <div id="login-choice" class="page">
+        <h2>Login As</h2>
+        <div class="choice-buttons">
+            <button onclick="showLogin('ngo')">NGO</button>
+            <button onclick="showLogin('company')">Company</button>
+        </div>
+    </div>
+
+    <!-- NGO Login/Signup Page -->
+    <div id="ngo-login" class="page">
+        <h2>NGO Login/Signup</h2>
+        <div class="auth-container">
+            <div class="auth-form">
+                <div class="auth-tabs">
+                    <button class="tab-btn login-tab active" onclick="toggleAuthMode('login', 'ngo')">Login</button>
+                    <button class="tab-btn signup-tab" onclick="toggleAuthMode('signup', 'ngo')">Signup</button>
+                </div>
+                <div id="ngo-login-form" class="auth-mode">
+                    <input type="text" id="ngo-username-login" placeholder="Username">
+                    <input type="password" id="ngo-password-login" placeholder="Password">
+                    <button onclick="login('ngo')">Login</button>
+                </div>
+                <div id="ngo-signup-form" class="auth-mode" style="display: none;">
+                    <input type="text" id="ngo-username-signup" placeholder="Username">
+                    <input type="email" id="ngo-email-signup" placeholder="Email">
+                    <input type="text" id="ngo-contact-signup" placeholder="Contact Number">
+                    <input type="password" id="ngo-password-signup" placeholder="Password">
+                    <button onclick="signup('ngo')">Signup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Login/Signup Page -->
+    <div id="company-login" class="page">
+        <h2>Company Login/Signup</h2>
+        <div class="auth-container">
+            <div class="auth-form">
+                <div class="auth-tabs">
+                    <button class="tab-btn login-tab active" onclick="toggleAuthMode('login', 'company')">Login</button>
+                    <button class="tab-btn signup-tab" onclick="toggleAuthMode('signup', 'company')">Signup</button>
+                </div>
+                <div id="company-login-form" class="auth-mode">
+                    <input type="text" id="company-username-login" placeholder="Username">
+                    <input type="password" id="company-password-login" placeholder="Password">
+                    <button onclick="login('company')">Login</button>
+                </div>
+                <div id="company-signup-form" class="auth-mode" style="display: none;">
+                    <input type="text" id="company-username-signup" placeholder="Username">
+                    <input type="email" id="company-email-signup" placeholder="Email">
+                    <input type="text" id="company-contact-signup" placeholder="Contact Number">
+                    <input type="password" id="company-password-signup" placeholder="Password">
+                    <button onclick="signup('company')">Signup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NGO Dashboard -->
+    <div id="ngo-dashboard" class="page">
+        <h2>NGO Dashboard</h2>
+        <div id="map"></div>
+        <div id="listings" class="listings"></div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Company Dashboard -->
+    <div id="company-dashboard" class="page">
+        <h2>Company Dashboard</h2>
+        <div class="dashboard-section">
+            <h3>Add Surplus Food</h3>
+            <input type="text" id="food" placeholder="Food (e.g., 20 pizzas)">
+            <div class="location-group">
+                <input type="text" id="location" placeholder="Location (lat, lng)">
+                <button class="location-btn" onclick="getCompanyLocation()">Get Current Location</button>
+            </div>
+            <div class="deadline-group">
+                <input type="date" id="deadline-date" placeholder="Deadline Date (e.g., 2025-03-01)">
+                <input type="text" id="deadline-time" placeholder="Deadline Time (e.g., 7 PM)">
+            </div>
+            <button onclick="addListing()">Add Food</button>
+        </div>
+        <div id="company-tips" class="tips-section"></div>
+        <div id="company-listings"></div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Food Waste Prevention Tips Modal -->
+    <div id="food-waste-tips-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>Food Waste Prevention Tips</h2>
+            <p>Help reduce food waste with these tips:</p>
+            <ul>
+                <li>Understand date labels: 'Sell by' doesn’t mean 'unsafe to eat'—check food quality.</li>
+                <li>Plan orders based on demand to avoid overproduction.</li>
+                <li>Donate surplus food early in the day to ensure freshness.</li>
+                <li>Store perishables properly to extend shelf life.</li>
+            </ul>
+            <button class="modal-close-btn">Got It!</button>
+        </div>
+    </div>
+
+    <!-- Axios for HTTP requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
